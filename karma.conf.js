@@ -8,16 +8,23 @@ module.exports = (config) => {
 		autoWatch: false,
 		files: ['webpack/**/*-spec.jsx', 'webpack/**/*-spec.js'],
 		preprocessors: {
-			'webpack.tests.js': ['webpack'],
+			'webpack/**/*-spec.jsx': ['webpack'],
+			'webpack/**/*-spec.js': ['webpack'],
 		},
 
 		webpack: {
-			entry: 'webpack/tests.js',
-			output: {
-				path: path.resolve(__dirname),
-				filename: 'bundle.js',
-			},
-			target: 'web',
+			mode: 'development',
+		},
+
+		webpackMiddleware: {
+			// webpack-dev-middleware configuration
+			// i.e.
+			noInfo: true,
+			// and use stats to turn off verbose output
+			stats: {
+				// options i.e. 
+				chunks: false
+			}
 		},
 
 		client: {

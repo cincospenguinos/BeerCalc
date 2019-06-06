@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 
 import FermentablesFrame from './fermentables-frame';
-import ValidatedInputField from "../validated-input-field/validated-input-field";
+import ValidatedInputField from "../../../../components/validated-input-field/validated-input-field";
 
 configure({ adapter: new Adapter() });
 describe('webpack/components/frame/fermentables-frame', () => {

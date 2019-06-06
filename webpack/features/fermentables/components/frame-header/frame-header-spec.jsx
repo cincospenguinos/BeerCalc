@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, configure } from 'enzyme/build';
 import Adapter from 'enzyme-adapter-react-16/build';
 
-import ValidatedInputField from '../validated-input-field/validated-input-field';
+import ValidatedInputField from '../../../../components/validated-input-field/validated-input-field';
 import FrameHeader from './frame-header';
 
 configure({ adapter: new Adapter() });

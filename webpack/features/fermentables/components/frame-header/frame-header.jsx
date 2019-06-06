@@ -1,5 +1,5 @@
 import React from 'react';
-import ValidatedInputField from '../validated-input-field/validated-input-field';
+import ValidatedInputField from '../../../../components/validated-input-field/validated-input-field';
 
 import styles from './styles.css';
 

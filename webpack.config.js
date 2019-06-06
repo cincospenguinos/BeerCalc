@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  // webpack folder’s entry js — excluded from jekll’s build process.
   mode: 'development',
   entry: "./webpack/entry.jsx",
   output: {
@@ -12,7 +11,7 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.css'],
   },
   module: {
     rules: [
@@ -24,7 +23,18 @@ module.exports = {
           presets: ['@babel/react', '@babel/preset-env'],
           plugins: ['@babel/plugin-proposal-class-properties']
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+          },
+        }],
+      },
     ]
   }
 };

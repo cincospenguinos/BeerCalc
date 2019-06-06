@@ -6,7 +6,12 @@ import styles from './styles.css';
 export default function FermentablesFrame() {
   return (
     <div id="fermentables-frame" className={styles.frame}>
-      <ValidatedInputField labelText="Batch Size" onChange={() => {}} id="batch-size" />
+      <ValidatedInputField
+        labelText="Batch Size:"
+        onChange={() => {}}
+        id="batch-size"
+        isValid={false}
+      />
     </div>
   );
 };

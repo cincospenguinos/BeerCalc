@@ -1,11 +1,32 @@
 .container {
-    display: flex;
+    margin: 8px;
 }
 
 .error {
     display: inline-flex;
+    font-size: 12px;
+    margin: 0 12px;
+    border-bottom: 1px solid red;
+    border-left: 1px solid red;
+}
+
+.input {
+    width: 42px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+.input-error {
+    composes: input;
+    border: 1px solid red;
+}
+
+.items {
+    display: flex;
+    align-items: center;
 }
 
 .label {
     font-size: 14px;
+    margin: 0 4px;
 }

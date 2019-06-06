@@ -10,11 +10,25 @@ export default function ValidatedInputField({
   onChange,
   ...rest
 }) {
+  const error = () => (
+    <div>
+      <div className={styles.error}>
+        This is an error
+      </div>
+    </div>
+  );
   return (
     <div className={styles.container}>
-      <label htmlFor={id} className={styles.label}>{labelText}</label>
-      <input id={id} onChange={onChange} {...rest} />
-      {!isValid && <div className={styles.error} />}
+      <div className={styles.items}>
+        <label htmlFor={id} className={styles.label}>{labelText}</label>
+        <input
+          className={isValid ? styles.input : styles['input-error']}
+          id={id}
+          onChange={onChange}
+          {...rest}
+        />
+      </div>
+      {!isValid && error()}
     </div>
     );
 }

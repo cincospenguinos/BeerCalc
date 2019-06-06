@@ -6,15 +6,16 @@ import FermentablesFrame from './fermentables-frame';
 
 configure({ adapter: new Adapter() });
 describe('webpack/components/frame/fermentables-frame', () => {
-	// beforeEach(function () {
-	// 	this.render = (props = {}) => ;
-	// });
-	//
-	// afterEach(function () {
-	// 	this.wrapper.unmount();
-	// });
+	beforeEach(function () {
+		this.render = (props = {}) => shallow(<FermentablesFrame {...props} />);
+	});
+
+	afterEach(function () {
+		this.wrapper.unmount();
+	});
 
 	it('exists', function () {
-		expect(shallow(<FermentablesFrame />)).toBeTruthy();
+		this.wrapper = this.render();
+		expect(this.wrapper).toBeTruthy();
 	});
 });

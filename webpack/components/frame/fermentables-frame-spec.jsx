@@ -16,9 +16,9 @@ describe('webpack/components/frame/fermentables-frame', () => {
 		this.wrapper.unmount();
 	});
 
-	it('exists', function () {
+	it('has a name', function () {
 		this.wrapper = this.render();
-		expect(this.wrapper).toBeTruthy();
+		expect(this.inputField('brew-name').length).toEqual(1);
 	});
 
 	it('has a batch size', function () {

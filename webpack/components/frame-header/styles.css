@@ -1,0 +1,16 @@
+.header {
+  display: inline-flex;
+  width: 100%;
+}
+
+.name {
+  width: 100px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.gravity {
+  width: 50px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}

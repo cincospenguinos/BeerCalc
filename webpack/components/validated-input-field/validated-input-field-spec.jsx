@@ -11,6 +11,8 @@ describe('webpack/components/validated-input-field/validated-input-field', () =>
   beforeEach(function () {
     this.onChange = td.func();
     this.render = (props = {}) => shallow(<ValidatedInputField
+      id="hello"
+      labelText={'Hello'}
       onChange={this.onChange}
       {...props}
     />);
@@ -34,5 +36,10 @@ describe('webpack/components/validated-input-field/validated-input-field', () =>
   it('does not show an error when valid', function () {
     this.wrapper = this.render({ isValid: true });
     expect(this.wrapper.find({ className: styles.error }).length).toEqual(0);
+  });
+
+  it('displays labelText', function () {
+    this.wrapper = this.render();
+    expect(this.wrapper.find('label').length).toEqual(1);
   });
 });

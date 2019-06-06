@@ -1,3 +1,11 @@
+.container {
+    display: flex;
+}
+
 .error {
     display: inline-flex;
+}
+
+.label {
+    font-size: 14px;
 }

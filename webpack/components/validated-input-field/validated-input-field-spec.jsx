@@ -4,13 +4,14 @@ import Adapter from 'enzyme-adapter-react-16';
 import * as td from 'testdouble';
 
 import ValidatedInputField from './validated-input-field';
+import styles from './styles.css';
 
 configure({ adapter: new Adapter() });
 describe('webpack/components/validated-input-field/validated-input-field', () => {
   beforeEach(function () {
-    this.validateInput = td.func();
+    this.onChange = td.func();
     this.render = (props = {}) => shallow(<ValidatedInputField
-      validateInput={this.validateInput}
+      onChange={this.onChange}
       {...props}
     />);
   });
@@ -19,9 +20,19 @@ describe('webpack/components/validated-input-field/validated-input-field', () =>
     this.wrapper.unmount();
   });
 
-  it('calls validateInput on change', function () {
+  it('calls onChange on change', function () {
     this.wrapper = this.render();
-    this.wrapper.simulate('change', 'foo');
-    td.verify(this.validateInput('foo'));
+    this.wrapper.find('input').simulate('change', 'foo');
+    td.verify(this.onChange('foo'));
+  });
+
+  it('shows an error when invalid', function () {
+    this.wrapper = this.render({ isValid: false });
+    expect(this.wrapper.find({ className: styles.error }).length).toEqual(1);
+  });
+
+  it('does not show an error when valid', function () {
+    this.wrapper = this.render({ isValid: true });
+    expect(this.wrapper.find({ className: styles.error }).length).toEqual(0);
   });
 });

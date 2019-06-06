@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ValidatedInputField({
-  validateInput,
-}) {
-  const onChange = (value) => {
-    validateInput(value);
-  };
+import styles from './styles.css';
 
-  return (<input onChange={onChange} />);
+export default function ValidatedInputField({
+  isValid,
+  onChange,
+}) {
+  return (
+    <div>
+      <input onChange={onChange} />
+      {!isValid && <div className={styles.error} />}
+    </div>
+    );
 }
 
 ValidatedInputField.propTypes = {
-  validateInput: PropTypes.func.isRequired,
+  isValid: PropTypes.bool,
+  onChange: PropTypes.func.isRequired,
+};
+
+ValidatedInputField.defaultProps = {
+  isValid: true,
 };

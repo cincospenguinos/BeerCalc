@@ -5,3 +5,14 @@
     border-radius: 2px;
     box-shadow: 8px 8px 8px grey;
 }
+
+.header {
+    display: inline-flex;
+    width: 100%;
+}
+
+.name {
+    width: 100px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}

@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack --mode=development && jekyll s",
-    "build": "webpack --mode=production && jekyll build"
+    "build": "webpack --mode=production && jekyll build",
+    "test": "node_modules/karma/bin/karma start"
   },
   "author": "Andre LaFleur",
   "license": "GPL-3.0-or-later",
@@ -18,6 +19,9 @@
     "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "expect": "^24.8.0",
     "jasmine": "^3.4.0",
     "jasmine-core": "^3.4.0",
     "karma": "^4.1.0",

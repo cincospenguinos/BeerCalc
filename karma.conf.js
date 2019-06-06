@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = (config) => {
 	config.set({
 		browsers: ['Chrome'],
@@ -14,17 +12,22 @@ module.exports = (config) => {
 
 		webpack: {
 			mode: 'development',
-		},
-
-		webpackMiddleware: {
-			// webpack-dev-middleware configuration
-			// i.e.
-			noInfo: true,
-			// and use stats to turn off verbose output
-			stats: {
-				// options i.e. 
-				chunks: false
-			}
+			module: {
+				rules: [
+					{
+						test: /\.(js|jsx)$/,
+						exclude: /(node_modules)/,
+						loader: "babel-loader", // "babel-loader" is also a legal name to reference
+						query: {
+							presets: ['@babel/react', '@babel/preset-env'],
+							plugins: ['@babel/plugin-proposal-class-properties']
+						}
+					}
+				]
+			},
+      resolve: {
+        extensions: ['.js', '.jsx']
+      },
 		},
 
 		client: {
@@ -39,4 +42,4 @@ module.exports = (config) => {
 
 	    browserNoActivityTimeout: 60000, // 60 seconds
 	});
-}
+};

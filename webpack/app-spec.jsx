@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import FermentablesFrame from "./components/frame/fermentables-frame";
+import FermentablesFrame from "./features/fermentables/components/frame/fermentables-frame";
 import App from './app';
 
 configure({ adapter: new Adapter() });

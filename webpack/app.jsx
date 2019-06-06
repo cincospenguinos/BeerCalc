@@ -1,5 +1,5 @@
 import React from 'react';
-import FermentablesFrame from "./components/frame/fermentables-frame";
+import FermentablesFrame from "./features/fermentables/components/frame/fermentables-frame";
 
 import styles from './styles.css';
 

@@ -5,9 +5,11 @@
 .error {
     display: inline-flex;
     font-size: 12px;
+    padding: 2px;
     margin: 0 12px;
     border-bottom: 1px solid red;
     border-left: 1px solid red;
+    border-radius: 2px;
 }
 
 .input {

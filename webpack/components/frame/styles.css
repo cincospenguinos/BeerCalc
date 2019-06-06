@@ -1,5 +1,7 @@
 .frame {
-    width: 500px;
-    height: 300px;
-    border: 1px solid hotpink;
+    width: 800px;
+    height: 500px;
+    border: 1px solid grey;
+    border-radius: 2px;
+    box-shadow: 8px 8px 8px grey;
 }

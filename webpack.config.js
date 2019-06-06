@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\**\/*.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: "babel-loader", // "babel-loader" is also a legal name to reference
         query: {

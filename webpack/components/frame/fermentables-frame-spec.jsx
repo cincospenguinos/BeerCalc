@@ -3,10 +3,12 @@ import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 
 import FermentablesFrame from './fermentables-frame';
+import ValidatedInputField from "../validated-input-field/validated-input-field";
 
 configure({ adapter: new Adapter() });
 describe('webpack/components/frame/fermentables-frame', () => {
 	beforeEach(function () {
+		this.inputField = (id) => this.wrapper.find(ValidatedInputField).find({ id });
 		this.render = (props = {}) => shallow(<FermentablesFrame {...props} />);
 	});
 
@@ -17,5 +19,10 @@ describe('webpack/components/frame/fermentables-frame', () => {
 	it('exists', function () {
 		this.wrapper = this.render();
 		expect(this.wrapper).toBeTruthy();
+	});
+
+	it('has a batch size', function () {
+		this.wrapper = this.render();
+		expect(this.inputField('batch-size').length).toEqual(1);
 	});
 });

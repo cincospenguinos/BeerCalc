@@ -8,11 +8,12 @@ export default function ValidatedInputField({
   isValid,
   labelText,
   onChange,
+  ...rest
 }) {
   return (
     <div className={styles.container}>
       <label htmlFor={id} className={styles.label}>{labelText}</label>
-      <input id={id} onChange={onChange} />
+      <input id={id} onChange={onChange} {...rest} />
       {!isValid && <div className={styles.error} />}
     </div>
     );

@@ -37,7 +37,8 @@ module.exports = (config) => {
 				]
 			},
       resolve: {
-        extensions: ['.js', '.jsx', '.css']
+        extensions: ['.js', '.jsx', '.css'],
+				modules: ['node_modules']
       },
 		},
 

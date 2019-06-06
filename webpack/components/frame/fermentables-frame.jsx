@@ -17,7 +17,12 @@ export default function FermentablesFrame() {
           labelText="Batch Size:"
           onChange={() => {}}
           id="batch-size"
-          isValid={false}
+        />
+        <ValidatedInputField
+          onChange={() => {}}
+          id="total-gravity"
+          labelText="Total Gravity:"
+          className={styles.gravity}
         />
       </div>
     </div>

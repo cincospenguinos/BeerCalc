@@ -21,6 +21,11 @@ describe('webpack/components/frame/fermentables-frame', () => {
 		expect(this.inputField('brew-name').length).toEqual(1);
 	});
 
+	it('has a total gravity', function () {
+		this.wrapper = this.render();
+		expect(this.inputField('total-gravity').length).toEqual(1);
+	});
+
 	it('has a batch size', function () {
 		this.wrapper = this.render();
 		expect(this.inputField('batch-size').length).toEqual(1);

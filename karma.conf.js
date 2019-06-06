@@ -22,11 +22,22 @@ module.exports = (config) => {
 							presets: ['@babel/react', '@babel/preset-env'],
 							plugins: ['@babel/plugin-proposal-class-properties']
 						}
-					}
+					},
+					{
+						test: /\.css$/i,
+						use: [{
+							loader: 'style-loader',
+						}, {
+							loader: 'css-loader',
+							options: {
+								modules: true,
+							},
+						}],
+					},
 				]
 			},
       resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
       },
 		},
 

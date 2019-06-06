@@ -1,6 +1,8 @@
-// (Function.prototype.bind)
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-// require('babel-core/polyfill');
-// this regex matches any js files in __tests__ directories
-var context = require.context('.', true, /__tests__\/.+\.jsx?$/);
+configure({ adapter: new Adapter() });
+
+var context = require.context('.', true, /\*-spec.(js|jsx)$/);
 context.keys().forEach(context);
+global.td = require('testdouble');
